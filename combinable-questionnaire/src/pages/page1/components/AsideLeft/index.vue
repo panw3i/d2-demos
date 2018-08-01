@@ -18,7 +18,8 @@
       <p class="d2-mt-0">区块标题</p>
       <el-input v-model="title"></el-input>
       <p>区块组件</p>
-      <el-radio-group v-model="name" size="small">
+      <el-alert v-if="all.length === 0" type="error" title="没有可用区块"></el-alert>
+      <el-radio-group v-else v-model="name" size="small">
         <el-radio-button
           v-for="(item, index) in all"
           :key="index"
@@ -28,7 +29,7 @@
       </el-radio-group>
       <span slot="footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="handleSelect">确 定</el-button>
+        <el-button v-if="all.length !== 0" type="primary" @click="handleSelect">确 定</el-button>
       </span>
     </el-dialog>
   </el-aside>

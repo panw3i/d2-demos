@@ -21,7 +21,7 @@
         <aside-right :res="res"/>
       </el-container>
     </div>
-    <template slot="footer">从左侧选择要添加的表单块</template>
+    <template slot="footer">从左侧选择要添加的表单块，右侧查看结果</template>
   </d2-container>
 </template>
 
