@@ -1,6 +1,8 @@
 <template>
   <d2-container>
-    <template slot="header">可配置问卷示例</template>
+    <template slot="header">
+      可配置问卷示例
+    </template>
     <div class="questionnaire">
       <el-container>
         <aside-left
@@ -10,10 +12,18 @@
           @remove="handleAsideRemove"/>
         <el-main class="questionnaire__main">
           <div class="questionnaire__container">
-            <el-card v-for="(form, index) in forms" :key="index" shadow="never" class="questionnaire__card">
-              <template slot="header">{{form.title}}</template>
+            <el-card
+              v-for="(form, index) in forms"
+              :key="index"
+              shadow="never"
+              class="questionnaire__card">
+              <template slot="header">
+                {{form.title}}
+              </template>
               <div style="margin-bottom: -20px;">
-                <component :is="form.name" v-model="forms[index].data"/>
+                <component
+                  :is="form.name"
+                  v-model="forms[index].data"/>
               </div>
             </el-card>
           </div>
@@ -21,7 +31,9 @@
         <aside-right :res="res"/>
       </el-container>
     </div>
-    <template slot="footer">从左侧选择要添加的表单块，右侧查看结果</template>
+    <template slot="footer">
+      从左侧选择要添加的表单块，右侧查看结果
+    </template>
   </d2-container>
 </template>
 
